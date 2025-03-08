@@ -1,0 +1,39 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: 326px;
+  width: 323px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+  align-items: center;
+}
+
+.card__btn-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border: none;
+  background-color: transparent;
+  z-index: 3;
+}
+
+.card__title {
+  background-color: white;
+  border-radius: 4px;
+  padding: 2px 12px;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  top: 15px;
+}
+
+.card__image {
+  height: 100%;
+  width: 100%;
+  border-radius: 12px;
+}

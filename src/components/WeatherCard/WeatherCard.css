@@ -1,0 +1,22 @@
+.weather-card {
+  background-position: right;
+  height: 80px;
+  width: 100%;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: row;
+  margin-top: 28px;
+}
+
+.weather-card__info {
+  margin-left: 16px;
+  align-self: center;
+  color: white;
+  font-size: 36px;
+  line-height: 40px;
+}
+
+.weather-card__image {
+  height: 100%;
+  z-index: 0;
+}
