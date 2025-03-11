@@ -5,37 +5,37 @@ function WeatherCard({ weatherData }) {
 
   if (weatherData.condition === "Clear") {
     weatherCardBg = new URL(
-      "../../src/assets/weather-card-bg/clear.svg",
+      "../../assets/weather-card-bg/clear.svg",
       import.meta.url
     ).href;
   } else if (weatherData.condition === "Clouds") {
     weatherCardBg = new URL(
-      "../../src/assets/weather-card-bg/cloudy.svg",
+      "../../assets/weather-card-bg/cloudy.svg",
       import.meta.url
     ).href;
   } else if (weatherData.condition === "Rain" || "Drizzle") {
     weatherCardBg = new URL(
-      "../../src/assets/weather-card-bg/rainy.svg",
+      "../../assets/weather-card-bg/rainy.svg",
       import.meta.url
     ).href;
   } else if (weatherData.condition === "Thunderstorm") {
     weatherCardBg = new URL(
-      "../../src/assets/weather-card-bg/stormy.svg",
+      "../../assets/weather-card-bg/stormy.svg",
       import.meta.url
     ).href;
   } else if (weatherData.condition == "Fog" || "Haze") {
     weatherCardBg = new URL(
-      "../../src/assets/weather-card-bg/foggy.svg",
+      "../../assets/weather-card-bg/foggy.svg",
       import.meta.url
     ).href;
   } else if (weatherData.condition === "Snow") {
     weatherCardBg = new URL(
-      "../../src/assets/weather-card-bg/snowy.svg",
+      "../../assets/weather-card-bg/snowy.svg",
       import.meta.url
     ).href;
   } else {
     weatherCardBg = new URL(
-      "../../src/assets/weather-card-bg/cloudy.svg",
+      "../../assets/weather-card-bg/cloudy.svg",
       import.meta.url
     ).href;
   }
