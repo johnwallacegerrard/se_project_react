@@ -2,12 +2,18 @@ import "./Header.css";
 import headerLogo from "../../assets/Logo.png";
 import headerAvatar from "../../assets/avatar.jpg";
 
-function Header({ handleAddClick }) {
+function Header({ handleAddClick, weatherData }) {
+  const currentDate = new Date().toLocaleString("default", {
+    month: "long",
+    day: "numeric",
+  });
   return (
     <header className="header">
       <div className="header__date-container">
         <img src={headerLogo} alt="logo" className="header__logo" />
-        <p className="header__date-and-location">date and location</p>
+        <p className="header__date-and-location">
+          {currentDate}, {weatherData.city}
+        </p>
       </div>
 
       <div className="header__user-container">

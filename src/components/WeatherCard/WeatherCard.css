@@ -8,15 +8,22 @@
   margin-top: 28px;
 }
 
+.weather-card__content {
+  position: relative;
+}
+
 .weather-card__info {
-  margin-left: 16px;
-  align-self: center;
+  position: absolute;
+  top: 20px;
   color: white;
   font-size: 36px;
   line-height: 40px;
+  margin: 0;
+  left: 16px;
 }
 
 .weather-card__image {
   height: 100%;
   z-index: 0;
+  width: 100%;
 }

@@ -23,6 +23,36 @@
   border-radius: 12px;
 }
 
+.modal__content_type_image {
+  height: 610px;
+  width: 498px;
+  padding: 0;
+}
+
+.modal__image {
+  height: 498px;
+  width: 498px;
+  border-radius: 12px;
+}
+
+.modal__text {
+  padding: 0 32px;
+}
+
+.modal__caption {
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 700;
+  margin-top: 20px;
+}
+
+.modal__weather {
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 700;
+  margin: 12px 0 32px;
+}
+
 .modal__form {
   z-index: 3;
   display: flex;
@@ -43,6 +73,13 @@
   right: 28px;
   padding: 0;
   border: none;
+  cursor: pointer;
+}
+
+.modal__close-btn_preview {
+  background-image: url("../../assets/close-icon-white.svg");
+  top: 24px;
+  right: 24px;
 }
 
 .modal__title {

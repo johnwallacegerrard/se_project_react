@@ -1,11 +1,13 @@
-import { useState } from "react";
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
+import { useEffect, useState } from "react";
+
 import "./App.css";
 import Header from "../Header/Header";
 import Main from "../Main/Main";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import ItemModal from "../ItemModal/ItemModal";
+import Footer from "../Footer/Footer";
+import { getWeather, filterWeatherData } from "../../utils/weatherApi";
+import { coordinates, APIkey } from "../../utils/constants";
 
 const addClothesBtn = document.querySelector("header__add-clothes-btn");
 const modal = document.querySelectorAll(".modal");
@@ -13,13 +15,17 @@ const addClothesModal = document.querySelector("#add-clothes-modal");
 const previewModal = document.querySelector("#preview-modal");
 
 function App() {
-  const [weatherData, setWeatherData] = useState({ type: "hot" });
+  const [weatherData, setWeatherData] = useState({
+    type: "",
+    temp: { F: 999, C: 999 },
+    city: "",
+    condition: "",
+  });
   const [activeModal, setActiveModal] = useState("");
   const [selectedCard, setSelectedCard] = useState({});
 
   const handleCardClick = (card) => {
-    console.log("its working, bithes");
-    setActiveModal("previewModal");
+    setActiveModal("preview");
     setSelectedCard(card);
   };
 
@@ -28,14 +34,22 @@ function App() {
   };
 
   const closeActiveModal = () => {
-    console.log("its working, bitches!");
     setActiveModal("");
   };
+
+  useEffect(() => {
+    getWeather(coordinates, APIkey)
+      .then((data) => {
+        const filteredData = filterWeatherData(data);
+        setWeatherData(filteredData);
+      })
+      .catch(console.error);
+  }, []);
 
   return (
     <div className="page">
       <div className="page__content">
-        <Header handleAddClick={handleAddClick} />
+        <Header handleAddClick={handleAddClick} weatherData={weatherData} />
         <Main weatherData={weatherData} handleCardClick={handleCardClick} />
       </div>
       <ModalWithForm
@@ -113,6 +127,7 @@ function App() {
         card={selectedCard}
         closeActiveModal={closeActiveModal}
       />
+      <Footer />
     </div>
   );
 }

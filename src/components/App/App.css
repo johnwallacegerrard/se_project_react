@@ -1,10 +1,11 @@
 .page {
-  width: 1360px;
-  padding: 0;
   background-color: #f3f3f3;
+  padding: 0 40px;
+  margin: 0 auto;
+  max-width: 1360px;
 }
 
 .page__content {
-  max-width: 1360px;
-  margin: 0 auto;
+  font-family: "Cabinet Grotesk", "Times New Roman", Times, serif;
+  font-weight: 700;
 }
