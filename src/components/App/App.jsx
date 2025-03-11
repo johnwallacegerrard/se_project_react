@@ -57,6 +57,7 @@ function App() {
         buttonText="Add Garment"
         activeModal={activeModal}
         closeActiveModal={closeActiveModal}
+        isOpen={activeModal === "addClothesModal"}
       >
         <label htmlFor="name" className="modal__label">
           Name
@@ -80,6 +81,7 @@ function App() {
           <legend className="modal__legend">Select the weather type:</legend>
           <div className="modal__radio-container">
             <input
+              id="hot"
               value="hot"
               name="radio"
               type="radio"
@@ -94,6 +96,7 @@ function App() {
           </div>
           <div className="modal__radio-container">
             <input
+              id="warm"
               value="warm"
               name="radio"
               type="radio"
@@ -108,6 +111,7 @@ function App() {
           </div>
           <div className="modal__radio-container">
             <input
+              id="cold"
               value="cold"
               name="radio"
               type="radio"
