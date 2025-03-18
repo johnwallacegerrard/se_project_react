@@ -27,6 +27,7 @@
   height: 610px;
   width: 498px;
   padding: 0;
+  position: relative;
 }
 
 .modal__image {
@@ -169,4 +170,16 @@
 
 .modal__submit-btn_disabled {
   opacity: 30%;
+}
+
+.modal__delete-btn {
+  background-color: transparent;
+  border: none;
+  font-size: 20px;
+  font-weight: 700;
+  color: rgb(255, 77, 0);
+  text-align: center;
+  position: absolute;
+  right: 32px;
+  bottom: 68px;
 }

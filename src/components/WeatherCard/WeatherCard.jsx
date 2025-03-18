@@ -1,6 +1,10 @@
+import { useContext } from "react";
+import CurrentTempUnitContext from "../../contexts/CurrentTempUnitContext";
 import "./WeatherCard.css";
 
 function WeatherCard({ weatherData }) {
+  const { currentTempUnit } = useContext(CurrentTempUnitContext);
+
   let weatherCardBg = "";
 
   if (weatherData.condition === "Clear") {
@@ -47,7 +51,11 @@ function WeatherCard({ weatherData }) {
           alt="weather-condition"
           className="weather-card__image"
         />
-        <p className="weather-card__info">{weatherData.temp.F} &deg; F</p>
+        <p className="weather-card__info">
+          {currentTempUnit === "F"
+            ? weatherData.temp.F + "\u00B0" + "F"
+            : weatherData.temp.C + "\u00B0" + "C"}{" "}
+        </p>
       </div>
     </section>
   );

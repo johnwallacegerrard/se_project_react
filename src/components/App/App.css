@@ -2,10 +2,10 @@
   background-color: #f3f3f3;
   padding: 0 40px;
   margin: 0 auto;
-  max-width: 1360px;
 }
 
 .page__content {
   font-family: "Cabinet Grotesk", "Times New Roman", Times, serif;
   font-weight: 700;
+  max-width: 1360px;
 }

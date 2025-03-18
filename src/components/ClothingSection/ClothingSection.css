@@ -1,0 +1,32 @@
+.clothing {
+  margin: 0 0 80px 116px;
+}
+
+.clothing__container {
+  display: flex;
+  align-items: center;
+}
+
+.clothing__title {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.clothing__add-btn {
+  border: none;
+  background-color: transparent;
+  opacity: 6;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.clothing__list {
+  width: 1015px;
+  height: 676px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  gap: 20px;
+  list-style-type: none;
+}
