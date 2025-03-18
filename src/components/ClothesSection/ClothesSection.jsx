@@ -1,7 +1,7 @@
 import ItemCard from "../ItemCard/ItemCard";
 import "./ClothesSection.css";
 
-function ClothingSection({ handleAddClick, handleCardClick, clothingItems }) {
+function ClothesSection({ handleAddClick, handleCardClick, clothingItems }) {
   return (
     <section className="clothing">
       <div className="clothing__container">
@@ -30,4 +30,4 @@ function ClothingSection({ handleAddClick, handleCardClick, clothingItems }) {
   );
 }
 
-export default ClothingSection;
+export default ClothesSection;
