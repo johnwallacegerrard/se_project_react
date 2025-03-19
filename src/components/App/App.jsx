@@ -41,7 +41,7 @@ function App() {
   const handleAddClothingItemSubmit = ({ name, imageUrl, type }) => {
     const newId = Math.max(...clothingItems.map((item) => item._id)) + 1;
     setClothingItems([
-      { name: name, link: imageUrl, weather: type, _id: newId },
+      { name, imageUrl, weather: type, _id: newId },
       ...clothingItems,
     ]);
     closeActiveModal();

@@ -12,7 +12,7 @@ export default function AddItemModal({
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onHandleAddClothingItemSubmit({ name, image, type });
+    onHandleAddClothingItemSubmit({ name, imageUrl: image, type });
     setName("");
     setImage("");
     setType("");
