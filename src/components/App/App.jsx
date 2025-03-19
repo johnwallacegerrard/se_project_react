@@ -40,12 +40,16 @@ function App() {
 
   const handleAddClothingItemSubmit = ({ name, imageUrl, type }) => {
     const newId = Math.max(...clothingItems.map((item) => item._id)) + 1;
-    setClothingItems([
-      { name, imageUrl, weather: type, _id: newId },
-      ...clothingItems,
-    ]);
-    closeActiveModal();
-    console.log(clothingItems);
+    api
+      .addClothingItem({ name: name, imageUrl: imageUrl, type: type })
+      .then((data) => {
+        setClothingItems([
+          { name, imageUrl, weather: type, _id: newId },
+          ...clothingItems,
+        ]);
+        closeActiveModal();
+      })
+      .catch(console.error);
   };
 
   const handleItemDelete = () => {

@@ -25,6 +25,15 @@ class Api {
       headers: this._headers,
     }).then(this._checkResponse);
   }
+
+  addClothingItem({ name, imageUrl, type }) {
+    return fetch(`${this._baseUrl}/items`, {
+      method: "POST",
+      headers: this._headers,
+      "Content-Type": "image",
+      body: JSON.stringify({ name, imageUrl, type }),
+    }).then(this._checkResponse);
+  }
 }
 
 export default Api;
