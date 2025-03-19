@@ -32,7 +32,7 @@ function App() {
   const [selectedCard, setSelectedCard] = useState({});
 
   const api = new Api({
-    baseUrl: "http://localhost:3002",
+    baseUrl: "http://localhost:3001",
     headers: {
       "Content-Type": "application/json",
     },
@@ -96,9 +96,12 @@ function App() {
     api
       .getClothingItems()
       .then((data) => {
+        console.log(data);
         setClothingItems(data);
       })
-      .catch(console.error);
+      .catch((err) => {
+        console.error(err);
+      });
   }, []);
 
   return (

@@ -1,4 +1,3 @@
-// const baseUrl = "hhtp://localhost:3002";
 class Api {
   constructor({ baseUrl, headers }) {
     this._baseUrl = baseUrl;
