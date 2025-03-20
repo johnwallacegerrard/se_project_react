@@ -18,6 +18,13 @@ const modal = document.querySelectorAll(".modal");
 const addClothesModal = document.querySelector("#add-clothes-modal");
 const previewModal = document.querySelector("#preview-modal");
 
+const api = new Api({
+  baseUrl: "http://localhost:3001",
+  headers: {
+    "Content-Type": "application/json",
+  },
+});
+
 function App() {
   const [weatherData, setWeatherData] = useState({
     type: "",
@@ -30,13 +37,6 @@ function App() {
   const [clothingItems, setClothingItems] = useState([]);
   const [activeModal, setActiveModal] = useState("");
   const [selectedCard, setSelectedCard] = useState({});
-
-  const api = new Api({
-    baseUrl: "http://localhost:3001",
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
 
   const handleAddClothingItemSubmit = ({ name, imageUrl, type }) => {
     const newId = Math.max(...clothingItems.map((item) => item._id)) + 1;
@@ -93,7 +93,9 @@ function App() {
         const filteredData = filterWeatherData(data);
         setWeatherData(filteredData);
       })
-      .catch(console.error);
+      .catch((err) => {
+        console.error(err);
+      });
   }, []);
 
   useEffect(() => {
