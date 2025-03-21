@@ -27,7 +27,7 @@ const api = new Api({
 
 function App() {
   const [weatherData, setWeatherData] = useState({
-    type: "",
+    weather: "",
     temp: { F: 999, C: 999 },
     city: "",
     condition: "",
@@ -38,15 +38,12 @@ function App() {
   const [activeModal, setActiveModal] = useState("");
   const [selectedCard, setSelectedCard] = useState({});
 
-  const handleAddClothingItemSubmit = ({ name, imageUrl, type }) => {
+  const handleAddClothingItemSubmit = ({ name, imageUrl, weather }) => {
     const newId = Math.max(...clothingItems.map((item) => item._id)) + 1;
     api
-      .addClothingItem({ name: name, imageUrl: imageUrl, type: type })
+      .addClothingItem({ name, imageUrl, weather })
       .then((data) => {
-        setClothingItems([
-          { name, imageUrl, weather: type, _id: newId },
-          ...clothingItems,
-        ]);
+        setClothingItems([data, ...clothingItems]);
         closeActiveModal();
       })
       .catch(console.error);
@@ -102,7 +99,6 @@ function App() {
     api
       .getClothingItems()
       .then((data) => {
-        console.log(data);
         setClothingItems(data);
       })
       .catch((err) => {

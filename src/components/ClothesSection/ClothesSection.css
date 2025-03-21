@@ -19,6 +19,9 @@
   font-size: 20px;
   font-weight: 700;
 }
+.clothing__add-btn:hover {
+  cursor: pointer;
+}
 
 .clothing__list {
   width: 1015px;

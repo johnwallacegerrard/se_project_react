@@ -26,12 +26,12 @@ class Api {
     }).then(this._checkResponse);
   }
 
-  addClothingItem({ name, imageUrl, type }) {
+  addClothingItem({ name, imageUrl, weather }) {
     return fetch(`${this._baseUrl}/items`, {
       method: "POST",
       headers: this._headers,
       "Content-Type": "image",
-      body: JSON.stringify({ name, imageUrl, type }),
+      body: JSON.stringify({ name, imageUrl, weather }),
     }).then(this._checkResponse);
   }
 }
