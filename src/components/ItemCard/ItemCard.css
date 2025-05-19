@@ -20,6 +20,25 @@
   color: rgba(0, 0, 0, 0.6);
   position: absolute;
   top: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card__like-btn {
+  width: 18px;
+  height: 15px;
+  background-image: url("../../assets/not-liked-icon.svg");
+  border: none;
+  background-position: center;
+  background-color: transparent;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-left: 10px;
+}
+
+.card__like-btn_active {
+  background-image: url("../../assets/liked-icon.svg");
 }
 
 .card__image {
