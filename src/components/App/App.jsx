@@ -18,11 +18,6 @@ import EditProfileModal from "../EditProfileModal";
 import Api from "../../utils/api";
 import Auth from "../../utils/auth";
 
-const addClothesBtn = document.querySelector("header__add-clothes-btn");
-const modal = document.querySelectorAll(".modal");
-const addClothesModal = document.querySelector("#add-clothes-modal");
-const previewModal = document.querySelector("#preview-modal");
-
 const api = new Api({
   baseUrl: "http://localhost:3001",
   headers: {
