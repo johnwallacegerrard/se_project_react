@@ -18,7 +18,7 @@ function Header({
     day: "numeric",
   });
 
-  const name = currentUser.name;
+  const name = currentUser?.name;
   const avatarPlaceholder = name.slice(0, 1);
 
   return (

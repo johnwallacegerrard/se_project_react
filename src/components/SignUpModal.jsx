@@ -42,7 +42,7 @@ export default function SignUpModal({ closeActiveModal, isOpen }) {
           onChange={(e) => {
             setEmail(e.target.value);
           }}
-          value={email}
+          value={email || ""}
         />
       </label>
       <label htmlFor="password" className="modal__label">
@@ -56,7 +56,7 @@ export default function SignUpModal({ closeActiveModal, isOpen }) {
           onChange={(e) => {
             setPassword(e.target.value);
           }}
-          value={password}
+          value={password || ""}
         />
       </label>
       <label htmlFor="name" className="modal__label">
@@ -70,7 +70,7 @@ export default function SignUpModal({ closeActiveModal, isOpen }) {
           onChange={(e) => {
             setName(e.target.value);
           }}
-          value={name}
+          value={name || ""}
         />
       </label>
       <label htmlFor="avatar" className="modal__label">
@@ -83,7 +83,7 @@ export default function SignUpModal({ closeActiveModal, isOpen }) {
           onChange={(e) => {
             setAvatar(e.target.value);
           }}
-          value={avatar}
+          value={avatar || ""}
         />
       </label>
     </ModalWithForm>
