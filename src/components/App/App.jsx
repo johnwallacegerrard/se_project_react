@@ -144,7 +144,6 @@ function App() {
     api
       .getClothingItems()
       .then((data) => {
-        console.log(data);
         setClothingItems(data);
       })
       .catch((err) => {

@@ -12,7 +12,10 @@ export default function SignUpModal({ closeActiveModal, isOpen }) {
   const [avatar, setAvatar] = useState("");
 
   useEffect(() => {
-    setEmail(""), setPassword(""), setName(""), setAvatar(undefined);
+    setEmail("");
+    setPassword("");
+    setName("");
+    setAvatar("");
   }, [isOpen]);
 
   const handleSubmit = (e) => {

@@ -9,7 +9,7 @@ export default class Auth extends Api {
     return fetch(`${this._baseUrl}/signup`, {
       method: "POST",
       headers: this._headers,
-      body: JSON.stringify({ email, password, name, avatar }),
+      body: JSON.stringify(userData),
     })
       .then(this._checkResponse)
       .then((data) => {
@@ -55,11 +55,12 @@ export default class Auth extends Api {
   }
 
   updateCurrentUser({ name, avatar }) {
+    const token = localStorage.getItem("jwt");
     return fetch(`${this._baseUrl}/users/me`, {
       method: "PATCH",
       headers: {
         ...this._headers,
-        Authorization: `Bearer ${this._token}`,
+        Authorization: `Bearer ${token}`,
       },
       body: JSON.stringify({ name, avatar }),
     })
