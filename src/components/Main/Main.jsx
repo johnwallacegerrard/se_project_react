@@ -5,7 +5,13 @@ import "./Main.css";
 import ItemCard from "../ItemCard/ItemCard";
 import CurrentTempUnitContext from "../../contexts/CurrentTempUnitContext";
 
-function Main({ weatherData, handleCardClick, clothingItems, handleCardLike }) {
+function Main({
+  weatherData,
+  handleCardClick,
+  clothingItems,
+  handleCardLike,
+  isLoggedIn,
+}) {
   const { currentTempUnit } = useContext(CurrentTempUnitContext);
 
   return (
@@ -28,6 +34,7 @@ function Main({ weatherData, handleCardClick, clothingItems, handleCardLike }) {
             .map((item) => {
               return (
                 <ItemCard
+                  isLoggedIn={isLoggedIn}
                   handleCardLike={handleCardLike}
                   handleCardClick={handleCardClick}
                   key={item._id}

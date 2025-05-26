@@ -2,7 +2,11 @@ import { useState, useEffect, useContext } from "react";
 import ModalWithForm from "../components/ModalWithForm/ModalWithForm";
 import CurrentUserContext from "../contexts/CurrentUserContext";
 
-export default function LoginModal({ closeActiveModal, isOpen }) {
+export default function LoginModal({
+  closeActiveModal,
+  isOpen,
+  handleSignUpClick,
+}) {
   const { handleLoginSubmit } = useContext(CurrentUserContext);
 
   const [email, setEmail] = useState("");
@@ -19,6 +23,7 @@ export default function LoginModal({ closeActiveModal, isOpen }) {
 
   return (
     <ModalWithForm
+      onSignUpClick={handleSignUpClick}
       closeActiveModal={closeActiveModal}
       isOpen={isOpen}
       title="Log in"

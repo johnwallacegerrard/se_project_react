@@ -48,7 +48,7 @@ export default function EditProfileModal({ closeActiveModal, isOpen }) {
         Avatar*
         <input
           id="avatar"
-          type="url"
+          type="URL"
           className="modal__input"
           placeholder="Avatar"
           required

@@ -152,6 +152,10 @@
   color: black;
 }
 
+.modal__buttons {
+  display: flex;
+}
+
 .modal__submit-btn {
   border: none;
   margin: 32px 0 0;
@@ -162,6 +166,11 @@
   border-radius: 4px;
   padding: 8px 16px;
   background-color: black;
+}
+
+.modal__submit-btn_secondary {
+  color: rgba(0, 0, 0, 0.5);
+  background-color: white;
 }
 
 .modal__submit-btn:hover {

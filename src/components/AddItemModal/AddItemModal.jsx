@@ -29,11 +29,11 @@ export default function AddItemModal({
       buttonText="Add Garment"
       onSubmit={handleSubmit}
     >
-      <label htmlFor="name" className="modal__label">
+      <label htmlFor="add-item-name" className="modal__label">
         Name
         <input
-          id="name"
-          type="text"
+          id="add-item-name"
+          type="string"
           className="modal__input"
           placeholder="Name"
           required

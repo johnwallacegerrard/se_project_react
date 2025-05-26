@@ -173,6 +173,7 @@ function App() {
                 path="/"
                 element={
                   <Main
+                    isLoggedIn={isLoggedIn}
                     handleCardLike={handleCardLike}
                     weatherData={weatherData}
                     handleCardClick={handleCardClick}
@@ -184,6 +185,8 @@ function App() {
                 path="/profile"
                 element={
                   <Profile
+                    handleCardLike={handleCardLike}
+                    isLoggedIn={isLoggedIn}
                     handleAddClick={handleAddClick}
                     handleCardClick={handleCardClick}
                     clothingItems={clothingItems}
@@ -194,10 +197,12 @@ function App() {
               <Route path="*" element={<Navigate to="/" />} replace />
             </Routes>
             <LoginModal
+              handleSignUpClick={handleSignUpClick}
               closeActiveModal={closeActiveModal}
               isOpen={activeModal === "logInModal"}
             />
             <SignUpModal
+              handleLogInClick={handleLogInClick}
               closeActiveModal={closeActiveModal}
               isOpen={activeModal === "signUpModal"}
             />

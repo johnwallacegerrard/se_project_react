@@ -3,7 +3,11 @@ import { useState, useEffect, useContext } from "react";
 import CurrentUserContext from "../contexts/CurrentUserContext";
 import ModalWithForm from "./ModalWithForm/ModalWithForm";
 
-export default function SignUpModal({ closeActiveModal, isOpen }) {
+export default function SignUpModal({
+  closeActiveModal,
+  isOpen,
+  handleLogInClick,
+}) {
   const { handleSignUpSubmit } = useContext(CurrentUserContext);
 
   const [email, setEmail] = useState("");
@@ -25,16 +29,17 @@ export default function SignUpModal({ closeActiveModal, isOpen }) {
 
   return (
     <ModalWithForm
+      onLogInClick={handleLogInClick}
       closeActiveModal={closeActiveModal}
       isOpen={isOpen}
       title="Sign up"
       buttonText="Next"
       onSubmit={handleSubmit}
     >
-      <label htmlFor="email" className="modal__label">
+      <label htmlFor="sign-up-email" className="modal__label">
         Email *
         <input
-          id="email"
+          id="sign-up-email"
           type="email"
           className="modal__input"
           placeholder="Email"
@@ -45,10 +50,10 @@ export default function SignUpModal({ closeActiveModal, isOpen }) {
           value={email || ""}
         />
       </label>
-      <label htmlFor="password" className="modal__label">
+      <label htmlFor="sign-up-password" className="modal__label">
         Password *
         <input
-          id="password"
+          id="sign-up-password"
           type="password"
           className="modal__input"
           placeholder="Password"
@@ -59,10 +64,10 @@ export default function SignUpModal({ closeActiveModal, isOpen }) {
           value={password || ""}
         />
       </label>
-      <label htmlFor="name" className="modal__label">
+      <label htmlFor="sign-up-name" className="modal__label">
         Name
         <input
-          id="Name"
+          id="sign-up-name"
           type="string"
           className="modal__input"
           placeholder="Name"
@@ -73,10 +78,10 @@ export default function SignUpModal({ closeActiveModal, isOpen }) {
           value={name || ""}
         />
       </label>
-      <label htmlFor="avatar" className="modal__label">
+      <label htmlFor="sign-up-avatar" className="modal__label">
         Avatar URL
         <input
-          id="avatar"
+          id="sign-up-avatar"
           type="URL"
           className="modal__input"
           placeholder="Avatar URL"
