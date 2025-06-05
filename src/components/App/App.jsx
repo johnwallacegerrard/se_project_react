@@ -19,7 +19,10 @@ import Api from "../../utils/api";
 import Auth from "../../utils/auth";
 
 const api = new Api({
-  baseUrl: "http://localhost:3001",
+  baseUrl:
+    process.env.NODE_ENV === "production"
+      ? "https://api.w-t-w-r.strangled.net"
+      : "http://localhost:3001",
   headers: {
     "Content-Type": "application/json",
   },
