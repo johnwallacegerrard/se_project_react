@@ -19,7 +19,7 @@ function Header({
   });
 
   const name = currentUser?.name;
-  const avatarPlaceholder = name.slice(0, 1);
+  const avatarPlaceholder = name?.slice(0, 1);
 
   return (
     <header className="header">
@@ -46,7 +46,7 @@ function Header({
             </button>
             <p className="header__username">{currentUser?.name}</p>
             <Link className="header__link-wrapper" to="/profile">
-              {currentUser.avatar ? (
+              {currentUser?.avatar ? (
                 <img
                   src={currentUser?.avatar}
                   alt="avatar"

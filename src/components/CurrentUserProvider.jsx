@@ -2,11 +2,13 @@ import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import CurrentUserContext from "../contexts/CurrentUserContext";
 import Auth from "../utils/auth";
-import Api from "../utils/api";
 
 function CurrentUserProvider({ children, closeActiveModal, setIsLoggedIn }) {
   const auth = new Auth({
-    baseUrl: "http://localhost:3001",
+    baseUrl:
+      import.meta.env.MODE === "production"
+        ? "https://api.w-t-w-r.strangled.net"
+        : "http://localhost:3001",
     headers: {
       "Content-Type": "application/json",
     },
@@ -16,6 +18,8 @@ function CurrentUserProvider({ children, closeActiveModal, setIsLoggedIn }) {
     name: "",
     avatar: "",
   });
+
+  const [loginError, setLoginError] = useState(false);
 
   const navigate = useNavigate();
 
@@ -43,19 +47,23 @@ function CurrentUserProvider({ children, closeActiveModal, setIsLoggedIn }) {
         setCurrentUser({ name: data.name, avatar: data.avatar });
         closeActiveModal();
       })
-      .catch(console.error);
+      .catch((err) => {
+        console.error;
+      });
   };
 
   const handleLoginSubmit = ({ email, password }) => {
     auth
       .signIn({ email, password })
       .then((user) => {
-        setIsLoggedIn(true);
         console.log(user);
+        setIsLoggedIn(true);
         setCurrentUser(user);
         closeActiveModal();
       })
-      .catch(console.error);
+      .catch((err) => {
+        console.error(err);
+      });
   };
 
   const handleEditProfileSubmit = ({ name, avatar }) => {

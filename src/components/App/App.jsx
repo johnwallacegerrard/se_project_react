@@ -18,9 +18,13 @@ import EditProfileModal from "../EditProfileModal";
 import Api from "../../utils/api";
 import Auth from "../../utils/auth";
 
+console.log("App component loaded");
+
+console.log("Environment mode:", import.meta.env.MODE);
+
 const api = new Api({
   baseUrl:
-    process.env.NODE_ENV === "production"
+    import.meta.env.MODE === "production"
       ? "https://api.w-t-w-r.strangled.net"
       : "http://localhost:3001",
   headers: {
@@ -28,8 +32,13 @@ const api = new Api({
   },
 });
 
+console.log("Environment mode:", import.meta.env.MODE);
+
 const auth = new Auth({
-  baseUrl: "http://localhost:3001",
+  baseUrl:
+    import.meta.env.MODE === "production"
+      ? "https://api.w-t-w-r.strangled.net"
+      : "http://localhost:3001",
   headers: {
     "Content-Type": "application/json",
   },

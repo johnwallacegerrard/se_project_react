@@ -15,9 +15,6 @@ export default class Auth extends Api {
       .then((data) => {
         console.log(data);
         return this.signIn({ email: data.email, password: password });
-      })
-      .catch((err) => {
-        console.error(err);
       });
   }
   signIn({ email, password }) {
@@ -29,12 +26,10 @@ export default class Auth extends Api {
       .then(this._checkResponse)
       .then((data) => {
         this._saveToken(data.token);
-        return this.getCurrentUser(data.token);
-      })
-      .then((user) => {
-        return user;
-      })
-      .catch((err) => console.error(err));
+        return this.getCurrentUser(data.token).then((user) => {
+          return user;
+        });
+      });
   }
 
   getCurrentUser() {
@@ -50,8 +45,7 @@ export default class Auth extends Api {
       .then(this._checkResponse)
       .then((user) => {
         return user;
-      })
-      .catch((err) => console.error(err));
+      });
   }
 
   updateCurrentUser({ name, avatar }) {
@@ -67,8 +61,7 @@ export default class Auth extends Api {
       .then(this._checkResponse)
       .then((user) => {
         return user;
-      })
-      .catch((err) => console.error(err));
+      });
   }
 
   _saveToken(token) {
